@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f1226">
+  <title>RobuxMart - Top Up Robux Cepat & Murah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">💎 Robux<span>Mart</span></a>
+      <nav id="nav">
+        <a href="#paket">Paket</a>
+        <a href="#cara">Cara Order</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" id="btnRiwayat">Riwayat</a>
+      </nav>
+      <button class="cart-btn" id="btnCart">🛒 Keranjang <span id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <span class="badge">⚡ Proses 1–5 Menit</span>
+        <h1>Top Up Robux <br>Cepat, Aman & Murah</h1>
+        <p>Pilih paket, masukkan username Roblox kamu, bayar lewat e-wallet, QRIS, atau transfer bank. Tanpa perlu password!</p>
+        <a href="#paket" class="btn btn-primary">Beli Sekarang</a>
+        <div class="stats">
+          <div><strong>50rb+</strong><small>Transaksi</small></div>
+          <div><strong>4.9/5</strong><small>Rating</small></div>
+          <div><strong>24/7</strong><small>Layanan</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="gem">💎</div>
+        <div class="floating f1">R$</div>
+        <div class="floating f2">R$</div>
+        <div class="floating f3">R$</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="paket">
+    <div class="container">
+      <h2 class="title">Pilih Paket Robux</h2>
+      <p class="subtitle">Harga transparan, tanpa biaya tersembunyi.</p>
+
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="🔍 Cari paket (mis. 800)...">
+        <select id="sort">
+          <option value="default">Urutkan: Populer</option>
+          <option value="asc">Harga Terendah</option>
+          <option value="desc">Harga Tertinggi</option>
+          <option value="best">Paling Hemat</option>
+        </select>
+      </div>
+
+      <div class="grid" id="productGrid"></div>
+      <p class="empty" id="emptyMsg" hidden>Paket tidak ditemukan.</p>
+    </div>
+  </section>
+
+  <section class="section alt" id="cara">
+    <div class="container">
+      <h2 class="title">Cara Order</h2>
+      <div class="steps">
+        <div class="step"><span>1</span><h3>Pilih Paket</h3><p>Tentukan jumlah Robux yang kamu mau.</p></div>
+        <div class="step"><span>2</span><h3>Isi Username</h3><p>Masukkan username Roblox (bukan password).</p></div>
+        <div class="step"><span>3</span><h3>Bayar</h3><p>Pilih metode pembayaran favoritmu.</p></div>
+        <div class="step"><span>4</span><h3>Selesai</h3><p>Robux dikirim otomatis ke akunmu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimoni">
+    <div class="container">
+      <h2 class="title">Kata Pembeli</h2>
+      <div class="grid testi">
+        <div class="card-t"><p>"Cepat banget, 3 menit udah masuk. Recommended!"</p><b>— nailacantik, london</b></div>
+        <div class="card-t"><p>"Harga paling murah dibanding toko lain, admin ramah."</p><b>— acagemoy, edinburgh</b></div>
+        <div class="card-t"><p>"Udah 5x beli di sini, aman terus. Mantap."</p><b>— Dimas, Surabaya</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="faq">
+    <div class="container narrow">
+      <h2 class="title">Pertanyaan Umum</h2>
+      <details><summary>Apakah saya perlu memberikan password?</summary><p>Tidak. Kami hanya membutuhkan username. Jangan pernah membagikan password akunmu kepada siapa pun.</p></details>
+      <details><summary>Berapa lama proses pengiriman?</summary><p>Rata-rata 1–5 menit setelah pembayaran terkonfirmasi.</p></details>
+      <details><summary>Metode pembayaran apa saja?</summary><p>QRIS, GoPay, OVO, DANA, ShopeePay, dan transfer bank.</p></details>
+      <details><summary>Bagaimana jika pesanan bermasalah?</summary><p>Hubungi admin lewat WhatsApp dengan menyertakan ID pesanan.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="logo">💎 Robux<span>Mart</span></div>
+        <p>Toko top up Robux terpercaya.</p>
+      </div>
+      <p class="disclaimer">⚠️ Ini adalah <b>website demo</b>. Pembayaran bersifat simulasi. Situs ini tidak berafiliasi dengan Roblox Corporation. Pastikan kamu memahami ketentuan layanan Roblox sebelum membeli.</p>
+    </div>
+    <div class="copy">© 2026 RobuxMart. Hak cipta dilindungi.</div>
+  </footer>
+
+  <!-- Drawer Keranjang -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <div class="drawer-head"><h3>🛒 Keranjang</h3><button id="closeCart" aria-label="Tutup">✕</button></div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="total"><span>Total</span><strong id="cartTotal">Rp0</strong></div>
+      <button class="btn btn-primary full" id="btnCheckout">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Modal Checkout -->
+  <div class="modal" id="modalCheckout" hidden>
+    <div class="modal-box">
+      <button class="modal-x" data-close>✕</button>
+      <h3>Checkout</h3>
+      <form id="checkoutForm" novalidate>
+        <label>Username Roblox
+          <input type="text" id="username" placeholder="contoh: BudiGamer123" required>
+          <small class="err" id="errUser"></small>
+        </label>
+        <label>Nomor WhatsApp
+          <input type="tel" id="wa" placeholder="08xxxxxxxxxx" required>
+          <small class="err" id="errWa"></small>
+        </label>
+
+        <p class="lbl">Metode Pembayaran</p>
+        <div class="pay-grid" id="payGrid"></div>
+        <small class="err" id="errPay"></small>
+
+        <div class="summary" id="summary"></div>
+        <button type="submit" class="btn btn-primary full">Bayar Sekarang</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Sukses -->
+  <div class="modal" id="modalSuccess" hidden>
+    <div class="modal-box center">
+      <div class="check">✓</div>
+      <h3>Pesanan Berhasil!</h3>
+      <p id="successInfo"></p>
+      <button class="btn btn-primary" data-close>Tutup</button>
+    </div>
+  </div>
+
+  <!-- Modal Riwayat -->
+  <div class="modal" id="modalHistory" hidden>
+    <div class="modal-box">
+      <button class="modal-x" data-close>✕</button>
+      <h3>Riwayat Pesanan</h3>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
